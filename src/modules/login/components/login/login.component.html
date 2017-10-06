@@ -1,0 +1,38 @@
+<div class="ui login">
+  <form class="ui large form">
+      <div class="ui">
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="user icon"></i>
+            <input type="text" name="email" placeholder="E-mail address" [(ngModel)]="username" [ngModelOptions]="{standalone: true}">
+          </div>
+        </div>
+        <div class="field">
+          <div class="ui left icon input">
+            <i class="lock icon"></i>
+            <input type="password" name="password" placeholder="Password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="ui toggle checkbox">
+            <input id="rememberMe" type="checkbox" name="public" [(ngModel)]="rememberMe" [ngModelOptions]="{standalone: true}" />
+            <label for="rememberMe">Remember me</label>
+          </div>
+        </div>
+
+        <div class="ui fluid submit">
+          <button *ngIf="!isLoging" (click)="login(username, password)" class="ui primary button fluid">Sign In</button>
+          <button *ngIf="isLoging" class="ui loading button primary fluid">Loading</button>
+        </div>
+      </div>
+
+      <sui-message class="attached error" [isDismissable]="true" *ngIf="isError()" #message>
+        <div class="header">
+          Authentication failed
+        </div>
+
+        <p>There is an error with the credentials, please verify.</p>
+      </sui-message>
+    </form>
+<div>

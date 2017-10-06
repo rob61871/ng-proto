@@ -1,0 +1,17 @@
+.btn-secondary:focus {
+    background-color: #ccc;
+    border-color: #ccc;
+}
+
+.date_filter_dropdown {
+  padding: 5px;
+  text-align: right;
+}
+
+.btn-info {
+  padding: 5px;
+}
+
+#clear_all {
+  padding: 5px;
+}

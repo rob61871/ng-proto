@@ -1,0 +1,84 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="dashboard-header">
+      <h1>Welcome {{brandByIdData?.brand.data.name}}</h1>
+      <p>Reports generated between {{dateStart}} and {{dateEnd}}</p>
+    </div>
+  </div>
+</div>
+<app-brand-menu></app-brand-menu>
+<div class="date-filter">
+  <app-date-filter></app-date-filter>
+</div>
+<div class="row my-2">
+  <div class="col-md">
+    <app-card>
+      <app-card-header>
+        <h3>Total Impressions</h3>
+      </app-card-header>
+      <app-card-block>
+        <h4>{{audienceData?.audience.data.impressions | number:'1.0-2'}}</h4>
+        <h6>Live Impressions: {{audienceData?.audience.data.impressions_national_live | number:'1.0-2'}}</h6>
+        <h6>Impressions SOV: </h6>
+      </app-card-block>
+    </app-card>
+  </div>
+  <div class="col-md">
+    <app-card>
+      <app-card-header>
+        <h3>Attention Scores</h3>
+      </app-card-header>
+      <app-card-block>
+        <h4>Your Score: {{audienceData?.attention.data.score | number:'1.0-2'}}</h4>
+        <h6>Industry Score: {{audienceDataByIndustry?.attention.data.score | number:'1.0-2'}}</h6>
+      </app-card-block>
+    </app-card>
+  </div>
+  <div class="col-md">
+    <app-card>
+      <app-card-header>
+        <h3>Est. TV Spend</h3>
+      </app-card-header>
+      <app-card-block>
+        <h4>${{brandByIdData?.airings.data.spend_estimated | number:'1.0-0'}}</h4>
+        <h6>Airings: {{brandByIdData?.airings.data.total | number:'1.0-2'}}</h6>
+      </app-card-block>
+    </app-card>
+  </div>
+</div>
+
+<div class="row my-2">
+  <div class="col-md-6">
+    <!-- [chartTypeFilter]="donut" -->
+    <app-chart-type-filter (clickChartType)="toggleChartType($event)">
+      <div class="chart-area">
+        <app-chart-data-filter (clickChartData)="toggleChartData($event)">
+          <app-master-chart ></app-master-chart>
+        </app-chart-data-filter>
+      </div>
+    </app-chart-type-filter>
+    <!-- <app-bar-chart></app-bar-chart> -->
+  </div>
+
+  <div class="col-md-6">
+    <!-- [chartTypeFilter]="bar" -->
+    <app-master-chart></app-master-chart>
+    <!-- <app-donut-chart></app-donut-chart> -->
+  </div>
+</div>
+
+<!-- <div class="row my-2">
+  <div class="col-md-6">
+    <app-dynamic-chart></app-dynamic-chart>
+  </div>
+</div> -->
+
+<div class="row my-2">
+  <div class="col-md-12">
+    <app-card-block>
+      <h3>Top Spots:</h3>
+      <app-spot-table></app-spot-table>
+    </app-card-block>
+  </div>
+</div>
+<app-spot-feed></app-spot-feed>

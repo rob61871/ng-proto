@@ -1,0 +1,15 @@
+<div class="chart-area">
+  <app-chart-data-filter (clickChartData)="toggleChartData($event)"></app-chart-data-filter>
+  <ngx-charts-pie-chart
+    [view]="view"
+    [results]="results"
+    [legend]="showLegend"
+    [scheme]="colorScheme"
+    [explodeSlices]="explodeSlices"
+    [labels]="showLabels"
+    [doughnut]="doughnut"
+    [gradient]="gradient"
+    [arcWidth]="arcWidth"
+    (select)="onSelect($event)">
+  </ngx-charts-pie-chart>
+</div>

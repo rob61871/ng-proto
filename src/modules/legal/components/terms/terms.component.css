@@ -1,0 +1,23 @@
+.row {
+  margin-bottom: 25px;
+  background:black
+}
+
+a {
+  font-size: 10px;
+  margin-right: 25px;
+  color: #fff;
+}
+
+.wrapper {
+  margin-left: 25px;
+  margin-right: 25px;
+  background-color: #f9f9f9;
+  color: #555;
+  line-height: 1.42857;
+}
+
+h1 {
+  font-family: sans-serifs;
+  color: #fff;
+}

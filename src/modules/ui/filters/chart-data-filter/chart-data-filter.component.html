@@ -1,0 +1,11 @@
+<form>
+  <div class="chartDataSort form-inline">
+    <select class="form-control" name="val" (change)="selectChangeHandler($event)" [(ngModel)]="dataSelected">
+      <option *ngFor="let val of formList">{{val}}</option>
+    </select>
+  </div>
+</form>
+<hr>
+
+<!-- <option class="btn btn-default dropdown-item" [ngValue]="ImpressionData">Impression Data</option>
+<option class="btn btn-default dropdown-item" [ngValue]="DemographicData">Demographic Data</option> -->

@@ -1,0 +1,31 @@
+<app-card>
+  <app-card-header>
+    <h3 class="float-left">Impressions by Type</h3>
+    <app-chart-type-filter
+    (clickChartType)="toggleChartType($event)"></app-chart-type-filter>
+  </app-card-header>
+  <app-card-block class="set-height">
+    <ngx-loading [show]="loading"></ngx-loading>
+    <div *ngIf="impressionData" class="chart-area">
+      <div class="chart-area">
+        <app-chart-data-filter (change)="toggleChartData($event)"></app-chart-data-filter>
+        <div class="barChart">
+          <ngx-charts-bar-horizontal
+           [view]="view"
+           [results]="results"
+           [gradient]="gradient"
+           [xAxis]="showXAxis"
+           [yAxis]="showYAxis"
+           [legend]=false
+           [scheme]="colorScheme"
+           [showXAxisLabel]="showXAxisLabel"
+           [showYAxisLabel]="showYAxisLabel"
+           [xAxisLabel]="xAxisLabel"
+           [yAxisLabel]="yAxisLabel"
+           (select)="onSelect($event)">
+         </ngx-charts-bar-horizontal>
+        </div>
+      </div>
+    </div>
+  </app-card-block>
+</app-card>

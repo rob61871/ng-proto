@@ -1,0 +1,40 @@
+<div class="date_filter_dropdown">
+  <button data-button="filter" class="btn btn-sm btn-secondary" data-toggle="collapse" id="date_filter_dropdown_button" (click)="showFilter()">
+  <i class="fa fa-filter" aria-hidden="true"></i>
+  Filter</button>
+</div>
+<div *ngIf="filterForm">
+  <app-card>
+    <app-card-header>
+      <label>
+        <span class="filter-label">
+            Date Range:
+        </span>
+      </label>
+      <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-secondary" data-days-past="1">Yesterday</button>
+        <button type="button" class="btn btn-sm btn-secondary" data-days-past="7">Past 7 days</button>
+        <button type="button" class="btn btn-sm btn-secondary" data-days-past="14">Past 14 days</button>
+        <button type="button" class="btn btn-sm btn-secondary" data-days-past="30">Past 30 days</button>
+        <button type="button" class="btn btn-sm btn-secondary" data-days-past="0" (click)="showCustom()">Custom Report</button>
+      </div>
+    </app-card-header>
+    <div *ngIf="customForm">
+      <div class="row">
+        <label>
+          <span class="custom-label">
+              Custom Range:
+          </span>
+        </label>
+
+        <app-datepicker></app-datepicker>
+      </div>
+    </div>
+    <div class="row">
+      <app-card-block>
+        <button type="button" class="btn btn-sm btn-info" (click)="applyFilters()">Apply</button>
+        <button id="clear_all" type="button" class="btn btn-sm btn-secondary">Clear All</button>
+      </app-card-block>
+    </div>
+  </app-card>
+</div>

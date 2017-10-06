@@ -1,0 +1,27 @@
+<div class="areaChart">
+  <div *ngIf="digitalData">
+    <ngx-charts-area-chart
+      class="chart-container"
+      [view]="view"
+      [schemeType]="schemeType"
+      [results]="digitalData"
+      [legend]="showLegend"
+      [legendTitle]="legendTitle"
+      (legendLabelClick)="onLegendLabelClick($event)"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [autoScale]="autoScale"
+      [timeline]="timeline"
+      [showGridLines]="showGridLines"
+      [roundDomains]="roundDomains"
+      [curve]="curve"
+      [tooltipDisabled]="tooltipDisabled"
+      (select)="select($event)">
+    </ngx-charts-area-chart>
+  </div>
+</div>

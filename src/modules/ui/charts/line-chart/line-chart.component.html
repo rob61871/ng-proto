@@ -1,0 +1,18 @@
+<div class="lineChart">
+  <div *ngIf="impressionData">
+    <ngx-charts-line-chart
+      [view]="view"
+      [results]="impressionData"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      [autoScale]="autoScale"
+      (select)="onSelect($event)">
+    </ngx-charts-line-chart>
+  </div>
+</div>

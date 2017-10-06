@@ -1,0 +1,30 @@
+<div class="col-12">
+  <app-card>
+    <app-card-header>
+      <h4>Spots by {{displaySortFilter}}</h4>
+      <div class="dropdown">
+        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          More
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownSort">
+          <option class="dropdown-item" value="Impressions" (click)="onSort($event.target.value)">Impressions</option>
+          <option class="dropdown-item" value="Estimated Spend" (click)="onSort($event.target.value)">Estimated Spend</option>
+          <option class="dropdown-item" value="Total Airings" (click)="onSort($event.target.value)">Total Airings</option>
+        </div>
+      </div>
+    </app-card-header>
+    <app-card-block>
+      <div class="container">
+        <div class="row">
+          <div *ngFor="let topSpot of topSpotData" class="col-md-2 col-xs-6">
+            <img class='spotImage' src="{{topSpot.image}}">
+            <h6>{{topSpot["spot.data.title_short"]}}</h6>
+            <h6>Impressions: {{topSpot["audience.data.impressions"] | number}}</h6>
+            <h6>Spend: {{topSpot["airings.data.spend_estimated"] | number}}</h6>
+            <h6>Airings: {{topSpot["airings.data.total"] | number}}</h6>
+          </div>
+        </div>
+      </div>
+    </app-card-block>
+  </app-card>
+</div>

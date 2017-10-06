@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <header class="main">
+    <app-layout-menu></app-layout-menu>
+  </header>
+
+  <section id="app-container">
+    <router-outlet name="popup"></router-outlet>
+    <router-outlet></router-outlet>
+  </section>
+
+  <footer>
+    <div class="row my-5">
+      <div class="col-md-12">
+        <p class="footer">
+          &copy; 2017 iSPot.tv, Inc.
+          <a routerLink="agreements/terms">Terms |</a>
+          <a routerLink="agreements/privacy">Privacy |</a>
+          <a routerLink="agreements/copyright">Copyright</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</div>

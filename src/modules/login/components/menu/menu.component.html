@@ -1,0 +1,18 @@
+<ul class="navbar-nav"  *ngIf="isAuthenticated()">
+  <li ngbDropdown class="nav-item dropdown">
+    <a ngbDropdownToggle class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="fa fa-user" aria-hidden="true"></i>
+    </a>
+    <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+      <a class="dropdown-item" href="#">user {{user.username}}</a>
+      <a class="dropdown-item disabled" href="#">Support ID: {{user.id}}</a>
+      <a class="dropdown-item" href="#">General Settings</a>
+      <a class="dropdown-item" href="#">
+        Support Center <i class="fa fa-external-link" aria-hidden="true"></i>
+      </a>
+      <a class="dropdown-item" routerLink="">Glossary</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item" (click)=onClickLogout()>Logout</a>
+    </div>
+  </li>
+</ul>

@@ -1,0 +1,17 @@
+  <app-chart-data-filter (clickChartData)="toggleChartData($event)"></app-chart-data-filter>
+  <div class="barChart">
+  <ngx-charts-bar-horizontal
+   [view]="view"
+   [results]="results"
+   [gradient]="gradient"
+   [xAxis]="showXAxis"
+   [yAxis]="showYAxis"
+   [legend]=false
+   [scheme]="colorScheme"
+   [showXAxisLabel]="showXAxisLabel"
+   [showYAxisLabel]="showYAxisLabel"
+   [xAxisLabel]="xAxisLabel"
+   [yAxisLabel]="yAxisLabel"
+   (select)="onSelect($event)">
+ </ngx-charts-bar-horizontal>
+</div>

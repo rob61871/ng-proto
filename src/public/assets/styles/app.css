@@ -1,0 +1,61 @@
+/* styling for ng-smart-tables */
+th {
+  background-color: #fff;
+  border-bottom: 2px solid #d8d8d8;
+}
+
+a.ng2-smart-sort-link.sort {
+  color: #5b5b5b;
+}
+
+tr:nth-child(odd) {
+  background-color:#f4f3f3;
+}
+
+tr:nth-child(even) {
+  background-color:#fff;
+}
+
+/* styling for ngx-charts */
+.chart-area {
+  height: 300px;
+}
+
+svg.ngx-charts {
+  float: right;
+  padding-left: 12px;
+}
+
+.chart-legend .legend-labels {
+  color: inherit;
+  background: transparent !important;
+  min-width: 100px;
+  width: 100%;
+}
+
+ul.legend-labels {
+  background-color: red;
+}
+
+.legend-title-text {
+  display: none !important;
+}
+
+.chart-legend .legend-label-color {
+  border-radius: 50% !important;
+}
+
+ /* Styling for charts and cards */
+ .card-header h3 {
+   font-size: 14px;
+ }
+
+ .barChart {
+  height: 100%;
+}
+
+.set-height {
+  width: 100%;
+  min-height: 380px;
+  padding: 0px;
+}

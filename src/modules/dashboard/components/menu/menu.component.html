@@ -1,0 +1,33 @@
+<ul class="navbar-nav">
+  <li class="nav-item nav-industry">
+    <a class="nav-link dropdown-item" routerLink="dashboard/industry/overview">Industries</a>
+  </li>
+  <li class="nav-item active nav-brand">
+    <a class="nav-link dropdown-item" routerLink="dashboard/brand/overview">Brands</a>
+  </li>
+  <li class="nav-item nav-spot">
+    <a class="nav-link dropdown-item" routerLink="dashboard/spot/overview">Spots</a>
+  </li>
+  <li class="nav-item nav-network">
+    <a class="nav-link dropdown-item" routerLink="dashboard/network/overview">Networks</a>
+  </li>
+  <li class="nav-item nav-show">
+    <a class="nav-link dropdown-item" routerLink="dashboard/show/overview">Shows</a>
+  </li>
+  <li ngbDropdown class="nav-item d-inline">
+    <a ngbDropdownToggle class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      Insights
+    </a>
+    <div ngbDropdownMenu class="dropdown-menu">
+      <a class="dropdown-item" routerLink="">TV Conversions</a>
+      <a class="dropdown-item" routerLink="">-Pandora Monitoring</a>
+      <a class="dropdown-item" routerLink="">-Paramount.com</a>
+      <div class="dropdown-divider"></div>
+        <a class="dropdown-item" routerLink="">Pivot Report</a>
+      <div class="dropdown-divider"></div>
+        <a class="dropdown-item" routerLink="">Spend Comparison</a>
+      <div class="dropdown-divider"></div>
+        <a class="dropdown-item" routerLink="">Special Events</a>
+    </div>
+  </li>
+</ul>

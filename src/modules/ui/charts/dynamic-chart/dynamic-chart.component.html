@@ -1,0 +1,19 @@
+<div>
+  <app-card>
+    <app-card-header>
+      <h3 class="float-left">Impressions by Type</h3>
+      <div class="clearfix"></div>
+    </app-card-header>
+    <app-card-block>
+
+          <div *ngIf="chartTypes != 'Display as Donut Chart'; then barBlock else donutBlock">
+          <div *ngFor = "let chartType of chartTypes">
+            {{ chartType }}
+          </div>
+
+            <ng-template #barBlock></ng-template>
+            <ng-template #donutBlock></ng-template>
+          </div>
+    </app-card-block>
+  </app-card>
+</div>

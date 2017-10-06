@@ -1,0 +1,15 @@
+<div class="clearfix">
+  <div ngbDropdown class="float-right dropdown-menu-right">
+    <button class="btn btn-sm btn-secondary" ngbDropdownToggle>
+      more
+    </button>
+    <div ngbDropdownMenu aria-labelledby="dropdownConfig">
+      <div>
+        <li class="btn btn-default dropdown-item" (click)="getChartType($event)"><i class="fa fa-bar-chart"></i> View as Bar Chart</li>
+      </div>
+      <div>
+        <li class="btn btn-default dropdown-item" (click)="getChartType($event)"><i class="fa fa-pie-chart"></i> View as Pie Chart</li>
+      </div>
+    </div>
+  </div>
+</div>

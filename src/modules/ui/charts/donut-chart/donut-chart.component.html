@@ -1,0 +1,65 @@
+<app-card>
+  <app-card-header>
+    <h3 class="float-left">View Rates</h3>
+
+    <app-chart-type-filter
+      (clickChartType)="toggleChartType($event)"></app-chart-type-filter>
+
+  </app-card-header>
+
+  <app-card-block class="set-height">
+
+    <ngx-loading [show]="loading"></ngx-loading>
+
+    <div *ngIf="viewRatesData" class="chart-area">
+
+      <app-chart-data-filter (change)="toggleChartData($event)"></app-chart-data-filter>
+
+      <div *ngIf="chartTypeFilter != 'donut'; then barBlock else donutBlock"></div>
+
+
+      <ng-template #donutBlock>
+        <ngx-charts-pie-chart
+          [view]="view"
+          [results]="results"
+          [legend]="showLegend"
+          [scheme]="colorScheme"
+          [explodeSlices]="explodeSlices"
+          [labels]="showLabels"
+          [doughnut]="doughnut"
+          [gradient]="gradient"
+          [arcWidth]="arcWidth"
+          (select)="onSelect($event)">
+        </ngx-charts-pie-chart>
+      </ng-template>
+
+      <ng-template #barBlock>
+        <div class="barChart">
+          <ngx-charts-bar-horizontal
+           [view]="view"
+           [results]="results"
+           [gradient]="gradient"
+           [xAxis]="showXAxis"
+           [yAxis]="showYAxis"
+           [legend]=false
+           [scheme]="colorScheme"
+           [showXAxisLabel]="showXAxisLabel"
+           [showYAxisLabel]="showYAxisLabel"
+           [xAxisLabel]="xAxisLabel"
+           [yAxisLabel]="yAxisLabel"
+           (select)="onSelect($event)">
+         </ngx-charts-bar-horizontal>
+        </div>
+      </ng-template>
+
+    </div>
+
+  </app-card-block>
+</app-card>
+
+<!-- <app-card-block>
+  <div *ngIf="chartTypeFilter != 'donut'; then barBlock else donutBlock"></div>
+  <ng-template #barBlock><app-bar-chart></app-bar-chart></ng-template>
+  {{ barBlock }}
+  <ng-template #donutBlock><app-donut-chart></app-donut-chart></ng-template>
+</app-card-block> -->

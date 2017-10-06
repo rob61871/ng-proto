@@ -1,0 +1,29 @@
+<nav ngbDropdown class="navbar navbar-expand-md navbar-light bg-faded">
+
+  <a class="navbar-brand" href="/">
+    <img src="https://d3ds6z1w6yhmzj.cloudfront.net/img/ispot/logo.svg" alt="iSpot.tv" style="width:90px" class="d-inline-block align-top" />
+  </a>
+
+  <button ngbDropdownToggle class="navbar-toggler navbar-toggler-right" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed"
+          aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div [ngbCollapse]="!isNavbarCollapsed" class="collapse navbar-collapse" id="exCollapsingNavbar2">
+    <!-- <app-dashboard-menu></app-dashboard-menu> -->
+  </div>
+
+
+  <div class="collapse navbar-collapse justify-content-end">
+    <app-login-menu></app-login-menu>
+
+    <form class="form-inline">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search..." aria-describedby="search" />
+        <span class="input-group-addon" id="basic-addon1">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </span>
+      </div>
+    </form>
+  </div>
+</nav>
